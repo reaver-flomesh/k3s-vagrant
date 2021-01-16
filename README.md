@@ -6,7 +6,7 @@
 1. 安装VirtualBox和Vagrant，最新版即可
 2. git clone https://github.com/polaristech-io/k3s-vagrant.git
 3. cd k3s-vagrant
-4. vagrant up，将会创建虚拟机及在虚拟机内安装k3s，初次安装由于需要拉取centos的镜像，可能需要20分钟左右
+4. vagrant up，将会创建虚拟机及在虚拟机内安装k3s，初次安装由于需要拉取centos的镜像，视网络情况可能需要20分钟左右
 5. 最后看见以下信息时，表示安装已完成：
 
         k3s: Complete!
