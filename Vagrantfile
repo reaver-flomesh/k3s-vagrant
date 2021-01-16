@@ -35,6 +35,13 @@ Vagrant.configure("2") do |config|
 			export INSTALL_K3S_VERSION=v1.19.7+k3s1
 			#export INSTALL_K3S_VERSION=v1.20.0+k3s2
 			curl -sfL https://get.k3s.io | sh -
+
+			chmod a+r /etc/rancher/k3s/k3s.yaml
+
+			tee -a /etc/environment <<-'EOF'
+			LANG=en_US.UTF-8
+			LC_ALL=en_US.UTF-8
+			EOF
 		SHELL
 	end
 end
