@@ -1,9 +1,9 @@
 # 使用说明
 
-为了方便搭建一个单节点的k3s虚拟机，进行开发或测试。
+为了方便快速搭建一个单节点的k3s虚拟机，进行开发或测试。
 
 ### 使用方法：
-1. 安装VirtualBox和Vagrant，最新版即可
+1. 安装[VirtualBox](https://www.virtualbox.org/wiki/Downloads)和[Vagrant](https://www.vagrantup.com/downloads)，最新版即可
 2. git clone https://github.com/polaristech-io/k3s-vagrant.git
 3. cd k3s-vagrant
 4. vagrant up，将会创建虚拟机及在虚拟机内安装k3s，初次安装由于需要拉取centos的镜像，视网络情况可能需要20分钟左右
