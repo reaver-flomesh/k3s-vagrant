@@ -32,8 +32,8 @@
        NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
        service/kubernetes   ClusterIP   10.43.0.1    <none>        443/TCP   151m
 
-7. vagrant halt, 将虚拟机关机
-8. vagrant destroy, 销毁虚拟机
+7. vagrant halt, 将虚拟机关机，下次vagrant up即可再次开机使用
+8. vagrant destroy, 彻底销毁虚拟机，再次使用时需要重新创建
 
 默认创建的虚拟机IP为**192.168.77.100**，如果需要更改，请修改Vagrantfile的第三行：
 > $k3s_ip = "192.168.77.100"
