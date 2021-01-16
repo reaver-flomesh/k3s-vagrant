@@ -33,7 +33,23 @@
        service/kubernetes   ClusterIP   10.43.0.1    <none>        443/TCP   151m
 
 7. vagrant halt, 将虚拟机关机，下次vagrant up即可再次开机使用
+
+        # ~/workspace/my-projects/k3s-vagrant [main o (b59a74a)] 
+        ▶ vagrant halt
+        ==> k3s: Attempting graceful shutdown of VM...
+
+        # ~/workspace/my-projects/k3s-vagrant [main o (b59a74a)] 
+        ▶ 
+        
 8. vagrant destroy, 彻底销毁虚拟机，再次使用时需要重新创建
+
+        # ~/workspace/my-projects/k3s-vagrant 
+        ▶ vagrant destroy
+            k3s: Are you sure you want to destroy the 'k3s' VM? [y/N] y
+        ==> k3s: Forcing shutdown of VM...
+        ==> k3s: Destroying VM and associated drives...
+
+        # ~/workspace/my-projects/k3s-vagrant 
 
 默认创建的虚拟机IP为**192.168.77.100**，如果需要更改，请修改Vagrantfile的第三行：
 > $k3s_ip = "192.168.77.100"
