@@ -1,0 +1,48 @@
+$vm_box = "ubuntu/focal64"
+$k3s_ip = "192.168.77.100"
+
+Vagrant.configure("2") do |config|
+	config.vm.define "k3s", primary: true do |k3s|
+		k3s.vm.box = $vm_box
+
+		k3s.vm.box_check_update = false
+	  
+		k3s.vm.hostname = "k3s"
+	  
+		k3s.vm.network "private_network", ip: $k3s_ip
+
+		k3s.vm.provider "virtualbox" do |vb|
+			vb.name = "k3s"
+			vb.memory = 4096 #$vm_memory
+			vb.cpus = 2 #$vm_cpus
+			vb.gui = false
+		end
+
+		# k3s.vm.synced_folder "/Users/linyang/workspace/polaris-projects/pipy-operator", "/home/vagrant/pipy-operator"
+
+		k3s.vm.provision "shell", inline: <<-SHELL
+			#update to latest packages
+			apt-get -y update
+			apt-get -y upgrade
+
+			#turn off firewall
+			ufw disable
+
+			# install required packages
+			apt-get install -y git wget curl
+
+			#install k3s
+			#export INSTALL_K3S_VERSION=v1.19.5+k3s2
+			export INSTALL_K3S_VERSION=v1.19.7+k3s1
+			#export INSTALL_K3S_VERSION=v1.20.0+k3s2
+			curl -sfL https://get.k3s.io | sh -
+
+			chmod a+r /etc/rancher/k3s/k3s.yaml
+
+			tee -a /etc/environment <<-'EOF'
+			LANG=en_US.UTF-8
+			LC_ALL=en_US.UTF-8
+			EOF
+		SHELL
+	end
+end
