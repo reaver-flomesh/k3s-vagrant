@@ -16,7 +16,7 @@
         drwxr-xr-x 4 linyang   128 Feb 13 11:52 centos
         drwxr-xr-x 4 linyang   128 Feb 12 13:14 ubuntu
         
-5. `vagrant up`，将会创建虚拟机及在虚拟机内安装k3s，初次安装由于需要拉取centos的镜像，视网络情况可能需要20分钟左右
+5. `vagrant up`，将会创建虚拟机及在虚拟机内安装k3s，初次安装由于需要拉取centos/ubuntu的镜像，视网络情况可能需要20分钟左右
 6. 最后看见以下信息时，表示安装已完成：
 
         k3s: Complete!
